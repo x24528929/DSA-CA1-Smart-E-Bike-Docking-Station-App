@@ -44,7 +44,7 @@ public class PQElement {
         else{
             sIsSheltered = "IS NOT Sheltered";
         }
-        sMessage = "Location: " + smbLocation.getLocation() + "\n Bike Capacity: " + smbLocation.getBikeCapacity() + "\n The location: " + sIsSheltered;
+        sMessage = "\nLocation: " + smbLocation.getLocation() + "\n Bike Capacity: " + smbLocation.getBikeCapacity() + "\n The location: " + sIsSheltered + "\n Priority Key: " + iKey;
         return sMessage;
     }
     

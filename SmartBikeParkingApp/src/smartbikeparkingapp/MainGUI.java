@@ -78,6 +78,7 @@ public class MainGUI extends javax.swing.JFrame {
         pqTA = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         sllTA = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,26 +86,42 @@ public class MainGUI extends javax.swing.JFrame {
         titleLbl.setForeground(new java.awt.Color(255, 255, 255));
         titleLbl.setText("Main Page");
 
-        sllPanel.setBackground(new java.awt.Color(0, 153, 51));
+        sllPanel.setBackground(new java.awt.Color(26, 188, 156));
         sllPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        areaNameLbl.setFont(new java.awt.Font("Gill Sans Nova Ultra Bold", 1, 14)); // NOI18N
+        areaNameLbl.setForeground(new java.awt.Color(242, 242, 242));
         areaNameLbl.setText("Area Name:");
 
+        populationLbl.setFont(new java.awt.Font("Gill Sans Nova Ultra Bold", 1, 14)); // NOI18N
+        populationLbl.setForeground(new java.awt.Color(242, 242, 242));
         populationLbl.setText("Population:");
 
+        currentBikeRackLbl.setFont(new java.awt.Font("Gill Sans Nova Ultra Bold", 1, 14)); // NOI18N
+        currentBikeRackLbl.setForeground(new java.awt.Color(242, 242, 242));
         currentBikeRackLbl.setText("Current bike racks:");
 
+        indexLbl.setFont(new java.awt.Font("Gill Sans Nova Cond Ultra Bold", 1, 14)); // NOI18N
+        indexLbl.setForeground(new java.awt.Color(242, 242, 242));
         indexLbl.setText("Index for ADD / GET / REMOVE:");
 
+        addBtn.setFont(new java.awt.Font("Gill Sans Nova Ultra Bold", 1, 14)); // NOI18N
+        addBtn.setForeground(new java.awt.Color(14, 77, 87));
         addBtn.setText("ADD");
         addBtn.addActionListener(this::addBtnActionPerformed);
 
+        getBtn.setFont(new java.awt.Font("Gill Sans Nova Ultra Bold", 1, 14)); // NOI18N
+        getBtn.setForeground(new java.awt.Color(14, 77, 87));
         getBtn.setText("GET");
         getBtn.addActionListener(this::getBtnActionPerformed);
 
+        removeBtn.setFont(new java.awt.Font("Gill Sans Nova Ultra Bold", 1, 14)); // NOI18N
+        removeBtn.setForeground(new java.awt.Color(14, 77, 87));
         removeBtn.setText("REMOVE");
         removeBtn.addActionListener(this::removeBtnActionPerformed);
 
+        printListBtn.setFont(new java.awt.Font("Gill Sans Nova Cond Ultra Bold", 1, 14)); // NOI18N
+        printListBtn.setForeground(new java.awt.Color(14, 77, 87));
         printListBtn.setText("PRINT LIST");
         printListBtn.addActionListener(this::printListBtnActionPerformed);
 
@@ -115,37 +132,32 @@ public class MainGUI extends javax.swing.JFrame {
             .addGroup(sllPanelLayout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addGroup(sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(sllPanelLayout.createSequentialGroup()
-                        .addComponent(indexLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(indexTf, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sllPanelLayout.createSequentialGroup()
-                        .addGap(0, 19, Short.MAX_VALUE)
-                        .addGroup(sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(addBtn)
-                            .addComponent(removeBtn))
-                        .addGap(82, 82, 82)
-                        .addGroup(sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(printListBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(getBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(77, 77, 77))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sllPanelLayout.createSequentialGroup()
                         .addGroup(sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(areaNameLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                                .addComponent(areaNameLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(populationLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(currentBikeRackLbl))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                         .addGroup(sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(sllPanelLayout.createSequentialGroup()
-                                .addComponent(currentBikeRacksTf, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())
-                            .addGroup(sllPanelLayout.createSequentialGroup()
-                                .addGroup(sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(areaNameTf)
-                                    .addComponent(populationTf, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE))
-                                .addGap(77, 77, 77))))))
+                            .addComponent(indexTf, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(currentBikeRacksTf, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                            .addComponent(populationTf)
+                            .addComponent(areaNameTf))
+                        .addGap(66, 66, 66))
+                    .addGroup(sllPanelLayout.createSequentialGroup()
+                        .addComponent(indexLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sllPanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(addBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                            .addComponent(getBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(72, 72, 72)
+                        .addGroup(sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(printListBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(removeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE))
+                        .addGap(54, 54, 54))))
         );
         sllPanelLayout.setVerticalGroup(
             sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,49 +179,88 @@ public class MainGUI extends javax.swing.JFrame {
                     .addComponent(indexLbl)
                     .addComponent(indexTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
+                .addGroup(sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(addBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                    .addComponent(removeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addBtn)
-                    .addComponent(getBtn))
-                .addGap(18, 18, 18)
-                .addGroup(sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(removeBtn)
-                    .addComponent(printListBtn))
-                .addContainerGap(104, Short.MAX_VALUE))
+                    .addComponent(getBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(printListBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        inputPanel1.setBackground(new java.awt.Color(0, 153, 51));
+        inputPanel1.setBackground(new java.awt.Color(26, 188, 156));
         inputPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        locationLbl.setFont(new java.awt.Font("Gill Sans Nova Ultra Bold", 1, 14)); // NOI18N
+        locationLbl.setForeground(new java.awt.Color(255, 255, 255));
         locationLbl.setText("Location:");
 
+        bikeCapacityLbl.setFont(new java.awt.Font("Gill Sans Nova Ultra Bold", 1, 14)); // NOI18N
+        bikeCapacityLbl.setForeground(new java.awt.Color(255, 255, 255));
         bikeCapacityLbl.setText("Bike Capacity:");
 
+        shelterLbl.setFont(new java.awt.Font("Gill Sans Nova Ultra Bold", 1, 14)); // NOI18N
+        shelterLbl.setForeground(new java.awt.Color(255, 255, 255));
         shelterLbl.setText("Is Sheltered?");
 
+        locationTf.addActionListener(this::locationTfActionPerformed);
+
+        trueBtn.setBackground(new java.awt.Color(26, 188, 156));
         isShelteredBG.add(trueBtn);
+        trueBtn.setFont(new java.awt.Font("Gill Sans Nova Ultra Bold", 1, 14)); // NOI18N
+        trueBtn.setForeground(new java.awt.Color(255, 255, 255));
         trueBtn.setText("Yes");
         trueBtn.addActionListener(this::trueBtnActionPerformed);
 
+        falseBtn.setBackground(new java.awt.Color(26, 188, 156));
         isShelteredBG.add(falseBtn);
+        falseBtn.setFont(new java.awt.Font("Gill Sans Nova Ultra Bold", 1, 14)); // NOI18N
+        falseBtn.setForeground(new java.awt.Color(242, 242, 242));
         falseBtn.setText("No");
 
+        queueBtn.setFont(new java.awt.Font("Gill Sans Nova Ultra Bold", 2, 14)); // NOI18N
+        queueBtn.setForeground(new java.awt.Color(14, 77, 87));
         queueBtn.setText("QUEUE");
+        queueBtn.addActionListener(this::queueBtnActionPerformed);
 
+        dequeueBtn.setFont(new java.awt.Font("Gill Sans Nova Ultra Bold", 1, 14)); // NOI18N
+        dequeueBtn.setForeground(new java.awt.Color(14, 77, 87));
         dequeueBtn.setText("DEQUEUE");
+        dequeueBtn.addActionListener(this::dequeueBtnActionPerformed);
 
+        pqSizeBtn.setFont(new java.awt.Font("Gill Sans Nova Ultra Bold", 1, 14)); // NOI18N
+        pqSizeBtn.setForeground(new java.awt.Color(14, 77, 87));
         pqSizeBtn.setText("CHECK SIZE");
+        pqSizeBtn.addActionListener(this::pqSizeBtnActionPerformed);
 
+        printPQbtn.setFont(new java.awt.Font("Gill Sans Nova Ultra Bold", 1, 14)); // NOI18N
+        printPQbtn.setForeground(new java.awt.Color(14, 77, 87));
         printPQbtn.setText("PRINT PQ");
+        printPQbtn.addActionListener(this::printPQbtnActionPerformed);
 
+        pushBtn.setFont(new java.awt.Font("Gill Sans Nova Ultra Bold", 1, 14)); // NOI18N
+        pushBtn.setForeground(new java.awt.Color(14, 77, 87));
         pushBtn.setText("PUSH");
         pushBtn.addActionListener(this::pushBtnActionPerformed);
 
+        popBtn.setFont(new java.awt.Font("Gill Sans Nova Ultra Bold", 1, 14)); // NOI18N
+        popBtn.setForeground(new java.awt.Color(14, 77, 87));
         popBtn.setText("POP");
+        popBtn.addActionListener(this::popBtnActionPerformed);
 
+        stackSizeBtn.setFont(new java.awt.Font("Gill Sans Nova Cond Ultra Bold", 1, 14)); // NOI18N
+        stackSizeBtn.setForeground(new java.awt.Color(14, 77, 87));
         stackSizeBtn.setText("CHECK SIZE");
+        stackSizeBtn.addActionListener(this::stackSizeBtnActionPerformed);
 
+        printStackBtn.setFont(new java.awt.Font("Gill Sans Nova Cond Ultra Bold", 1, 14)); // NOI18N
+        printStackBtn.setForeground(new java.awt.Color(14, 77, 87));
         printStackBtn.setText("PRINT STACK");
+        printStackBtn.addActionListener(this::printStackBtnActionPerformed);
 
+        priorityLbl.setFont(new java.awt.Font("Gill Sans Nova Ultra Bold", 1, 14)); // NOI18N
+        priorityLbl.setForeground(new java.awt.Color(255, 255, 255));
         priorityLbl.setText("Priority:");
 
         javax.swing.GroupLayout inputPanel1Layout = new javax.swing.GroupLayout(inputPanel1);
@@ -243,7 +294,7 @@ public class MainGUI extends javax.swing.JFrame {
                         .addComponent(falseBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(inputPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(popBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(dequeueBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                            .addComponent(dequeueBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(printPQbtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addComponent(priorityTf))
                     .addComponent(printStackBtn))
@@ -297,16 +348,17 @@ public class MainGUI extends javax.swing.JFrame {
         sllTA.setRows(5);
         jScrollPane2.setViewportView(sllTA);
 
+        jButton1.setFont(new java.awt.Font("Gill Sans Nova Ultra Bold", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(14, 77, 87));
+        jButton1.setText("EXIT");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(299, 299, 299)
-                .addComponent(titleLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
+                .addContainerGap(15, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jScrollPane1)
                     .addComponent(inputPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -314,22 +366,30 @@ public class MainGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(sllPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane2))
-                .addContainerGap())
+                .addGap(18, 18, 18))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(365, 365, 365)
+                .addComponent(titleLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(38, 38, 38))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(titleLbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(inputPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sllPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(titleLbl)
+                    .addComponent(jButton1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(inputPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(sllPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
                     .addComponent(jScrollPane2))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -341,6 +401,21 @@ public class MainGUI extends javax.swing.JFrame {
 
     private void pushBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pushBtnActionPerformed
         // TODO add your handling code here:
+        //check if stack is full and error handle accordingly
+        if(myStack.isFull()){
+            JOptionPane.showMessageDialog(null, "There are too many ongoing jobs right now, the stack is full!");
+        }
+        //if stack is empty display error message
+        else if(myPQ.isEmpty()){
+            JOptionPane.showMessageDialog(null, "You cannot push any ongoing jobs if the PQ is empty!");
+        }
+        //otherwise take element from pq and add the object to stack
+        else{
+            PQElement retrievedElem = myPQ.dequeue();
+            myStack.push(retrievedElem.getSmbLocation());
+            //success message
+            pqTA.append("\n Location successfully stacked!\n***********");            
+        }
     }//GEN-LAST:event_pushBtnActionPerformed
 
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
@@ -358,8 +433,13 @@ public class MainGUI extends javax.swing.JFrame {
             //check if list input is empty, then add to end, if index smaller then size add to position, if index larger then size add at the end
             if (mySLList.isEmpty()) {
                 mySLList.add(newArea);
+                //more error handling
+            }else if (index <1){
+                JOptionPane.showMessageDialog(null, "Index starts from 1 for SLL, it cannot be 0 or a negative number!");
             } else if (index < mySLList.size()) {
+                //add to index if pass checks
                 mySLList.add(index, newArea);
+                //add to index if index larger than size
             } else {
                 mySLList.add(mySLList.size(), newArea);
             }
@@ -368,6 +448,7 @@ public class MainGUI extends javax.swing.JFrame {
             populationTf.setText("");
             currentBikeRacksTf.setText("");
             indexTf.setText("");
+             sllTA.append("\n Area successfully listed!\n***********");           
         } catch (NumberFormatException numE) {
             JOptionPane.showMessageDialog(null, "You have to enter an integer for the last 3 fields!");
         }
@@ -428,6 +509,113 @@ public class MainGUI extends javax.swing.JFrame {
         sllTA.append("\n***********\n" + mySLList.printList());
     }//GEN-LAST:event_printListBtnActionPerformed
 
+    private void locationTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locationTfActionPerformed
+        // TODO add your handling code here:
+
+
+    }//GEN-LAST:event_locationTfActionPerformed
+
+    private void queueBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_queueBtnActionPerformed
+        // TODO add your handling code here:
+        String location = locationTf.getText();
+        boolean isSheltered = false;
+        //try catch for number format handling
+        try {
+            int bikeCapacity = Integer.parseInt(bikeCapacityTf.getText());
+            if (trueBtn.isSelected()) {
+                isSheltered = true;
+            } else if (falseBtn.isSelected()) {
+                isSheltered = false;
+            } else {
+                JOptionPane.showMessageDialog(null, "You must select a radio button for 'Is Sheltered'");
+            }
+            int priority = Integer.parseInt(priorityTf.getText());
+            //create new object with input fields
+            SmartBikeParkLocation newLoc = new SmartBikeParkLocation(location, bikeCapacity, isSheltered);
+            myPQ.enqueue(priority, newLoc);
+            locationTf.setText("");
+            bikeCapacityTf.setText("");
+            priorityTf.setText("");
+            pqTA.append("\n Location successfully queued!\n***********");
+
+        } catch (NumberFormatException numE) {
+            JOptionPane.showMessageDialog(null, "You have to enter an integer for the priority field!");
+        }
+    }//GEN-LAST:event_queueBtnActionPerformed
+
+    private void dequeueBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dequeueBtnActionPerformed
+        // TODO add your handling code here:
+        //cant dequeue if it is empty
+        if (myPQ.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "The queue is empty!");
+        } else {
+            //removing the element and then retrieving the object
+            PQElement removedElem = myPQ.dequeue();
+            SmartBikeParkLocation removedObj = removedElem.getSmbLocation();
+            String sSheltered;
+            if (removedObj.isIsSheltered()) {
+                sSheltered = "IS Sheltered";
+            } else {
+                sSheltered = "IS NOT Sheltered";
+
+            }
+            //displaying removed location
+            String removedElemString = "\nLocation dequeued: " + removedObj.getLocation() + "\n Bike Capacity: " + removedObj.getBikeCapacity() + "\n The location: " + sSheltered + "\n***************";
+            pqTA.append(removedElemString);
+
+        }
+
+    }//GEN-LAST:event_dequeueBtnActionPerformed
+
+    private void pqSizeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pqSizeBtnActionPerformed
+        // TODO add your handling code here:
+        //checking size
+        pqTA.append("\nThe size of the PQ right now is " + myPQ.size() + "\n****************");
+    }//GEN-LAST:event_pqSizeBtnActionPerformed
+
+    private void printPQbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printPQbtnActionPerformed
+        // TODO add your handling code here:
+        //print pq method
+        pqTA.append(myPQ.printPQueue() + "\n****************");
+    }//GEN-LAST:event_printPQbtnActionPerformed
+
+    private void stackSizeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stackSizeBtnActionPerformed
+        // TODO add your handling code here:
+        //stack size
+        pqTA.append("\nThe size of the ongoing work stack is " + myStack.size()+ "\n****************");
+    }//GEN-LAST:event_stackSizeBtnActionPerformed
+
+    private void popBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_popBtnActionPerformed
+        // TODO add your handling code here:
+        //if stack is empty cant pop
+        if (myStack.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "The stack is empty!");
+            //if not, pop
+        } else { 
+            SmartBikeParkLocation poppedObj = myStack.pop();
+            String sSheltered;
+            if (poppedObj.isIsSheltered()) {
+                sSheltered = "IS Sheltered";
+            } else {
+                sSheltered = "IS NOT Sheltered";
+
+            }
+            String poppedElemString = "\nLocation unStacked: " + poppedObj.getLocation() + "\n Bike Capacity: " + poppedObj.getBikeCapacity() + "\n The location: "  + sSheltered + "\n***************";
+            pqTA.append(poppedElemString);        
+        }
+    }//GEN-LAST:event_popBtnActionPerformed
+
+    private void printStackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printStackBtnActionPerformed
+        // TODO add your handling code here:
+        //stack print method
+        pqTA.append(myStack.printStack());
+    }//GEN-LAST:event_printStackBtnActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -468,6 +656,7 @@ public class MainGUI extends javax.swing.JFrame {
     private javax.swing.JTextField indexTf;
     private javax.swing.JPanel inputPanel1;
     private javax.swing.ButtonGroup isShelteredBG;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel locationLbl;

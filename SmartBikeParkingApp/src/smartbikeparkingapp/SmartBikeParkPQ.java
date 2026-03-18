@@ -64,7 +64,7 @@ public class SmartBikeParkPQ implements PQInterface {
     }
     //removing and returning the first object in the pqueue
     @Override
-    public Object dequeue(){
+    public PQElement dequeue(){
         return thePQueue.remove(0);
     }
     

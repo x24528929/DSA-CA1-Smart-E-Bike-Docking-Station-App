@@ -75,7 +75,7 @@ public class CurrentBuildsStack implements StackInterface {
         else{
             sIsSheltered = "IS NOT Sheltered";
         }           
-           sMessage += "\nLocation: " + theStack.get(iCount).getLocation() + "\n Bike Capacity: " + theStack.get(iCount).getBikeCapacity() + "\n The location: " + sIsSheltered;
+           sMessage += "\nLocation: " + theStack.get(iCount).getLocation() + "\n Bike Capacity: " + theStack.get(iCount).getBikeCapacity() + "\n The location: " + sIsSheltered + "\n****************";
        }
        return sMessage;
     }
