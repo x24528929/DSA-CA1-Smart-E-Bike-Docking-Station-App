@@ -32,9 +32,11 @@ public class PQElement {
     public void setSmbLocation(SmartBikeParkLocation smbLocation) {
         this.smbLocation = smbLocation;
     }
-    
+ 
+   //print a string with all the details of each location
     public String printSMBLocation(){
         String sMessage;
+        //since my last field is a boolean I will use a variable to store a String depending on its value
         String sIsSheltered;
         if(smbLocation.isIsSheltered()){
             sIsSheltered = "IS Sheltered";

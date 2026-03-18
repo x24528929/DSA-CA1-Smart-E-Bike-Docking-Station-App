@@ -8,6 +8,8 @@ package smartbikeparkingapp;
  *
  * @author marti
  */
+
+//SLL interface
 public interface SLLInterface {
     
     public int size();

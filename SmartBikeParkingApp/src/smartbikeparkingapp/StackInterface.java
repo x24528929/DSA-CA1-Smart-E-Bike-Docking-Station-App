@@ -8,6 +8,8 @@ package smartbikeparkingapp;
  *
  * @author marti
  */
+
+//stack interface
 public interface StackInterface {
     
     public boolean isEmpty();

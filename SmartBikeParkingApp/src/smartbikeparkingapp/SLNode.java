@@ -34,6 +34,7 @@ public class SLNode {
         this.next = next;
     }
     
+    //this is to return a string with the details of the areaDesc calling the class and each respective method
     public String printAreaDesc(){
         String sMessage;
         sMessage = "Area Name: " + areaDesc.getAreaName() + "\n Population: " + areaDesc.getPopulation() + "\n Current Bikes Racks: " + areaDesc.getCurrentBikeRacks();

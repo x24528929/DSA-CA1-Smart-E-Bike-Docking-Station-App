@@ -8,6 +8,8 @@ package smartbikeparkingapp;
  *
  * @author marti
  */
+
+//pq interface
 public interface PQInterface {
     
     public void enqueue(int iPriorityKey, Object theElement);
