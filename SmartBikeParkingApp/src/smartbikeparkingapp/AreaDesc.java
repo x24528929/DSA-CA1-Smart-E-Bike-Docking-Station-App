@@ -9,11 +9,11 @@ package smartbikeparkingapp;
  * @author marti
  */
 public class AreaDesc {
-    private int areaName;
+    private String areaName;
     private int population;
     private int currentBikeRacks;
 
-    public AreaDesc(int areaName, int population, int currentBikeRacks) {
+    public AreaDesc(String areaName, int population, int currentBikeRacks) {
         this.areaName = areaName;
         this.population = population;
         this.currentBikeRacks = currentBikeRacks;
@@ -22,11 +22,11 @@ public class AreaDesc {
     public AreaDesc() {
     }
 
-    public int getAreaName() {
+    public String getAreaName() {
         return areaName;
     }
 
-    public void setAreaName(int areaName) {
+    public void setAreaName(String areaName) {
         this.areaName = areaName;
     }
 
