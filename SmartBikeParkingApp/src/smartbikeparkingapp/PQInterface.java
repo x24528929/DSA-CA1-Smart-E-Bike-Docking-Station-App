@@ -10,4 +10,14 @@ package smartbikeparkingapp;
  */
 public interface PQInterface {
     
+    public void enqueue(int iPriorityKey, Object theElement);
+    
+    public Object dequeue();
+    
+    public int size();
+    
+    public boolean isEmpty();
+    
+    public String printPQueue();
+    
 }

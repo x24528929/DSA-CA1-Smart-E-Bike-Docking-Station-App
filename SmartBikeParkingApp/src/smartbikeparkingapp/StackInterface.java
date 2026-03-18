@@ -10,4 +10,16 @@ package smartbikeparkingapp;
  */
 public interface StackInterface {
     
+    public boolean isEmpty();
+    
+    public boolean isFull();
+    
+    public int size();
+    
+    public void push(Object theElement);
+    
+    public Object pop();
+    
+    public String printStack();
+    
 }

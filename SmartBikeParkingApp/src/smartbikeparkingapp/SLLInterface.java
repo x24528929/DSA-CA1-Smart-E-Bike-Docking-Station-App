@@ -10,4 +10,18 @@ package smartbikeparkingapp;
  */
 public interface SLLInterface {
     
+    public int size();
+    
+    public boolean isEmpty();
+    
+    public void add(Object theElement);
+    
+    public void add(int iPosition, Object theElement);
+    
+    public void remove(int iPosition);
+    
+    public Object get(int iPosition);
+    
+    public String printList();
+    
 }
