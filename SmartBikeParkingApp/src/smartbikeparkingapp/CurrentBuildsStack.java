@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  * @author marti
  */
 public class CurrentBuildsStack implements StackInterface {
-    private ArrayList<SmartBikeParkLocation> theStack;
+    private final ArrayList<SmartBikeParkLocation> theStack;
     
     //constructor with an arraylist of type object SmartBikeParkLocation
     public CurrentBuildsStack(){

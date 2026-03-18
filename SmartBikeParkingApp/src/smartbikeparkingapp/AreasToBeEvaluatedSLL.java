@@ -25,7 +25,7 @@ public class AreasToBeEvaluatedSLL implements SLLInterface {
     private void setCurrent(int iPosition){
         prevNode = null;
         currNode = head;
-        for(int iCount = 0; iCount < iPosition; iCount++){
+        for(int iCount = 1; iCount < iPosition; iCount++){
             prevNode = currNode;
             currNode = currNode.getNext();
         }
@@ -99,7 +99,8 @@ public class AreasToBeEvaluatedSLL implements SLLInterface {
         String sPrintList = "";
         SLNode tempNode = head;
         while(tempNode!=null){
-            sPrintList += "\nArea Name: " + tempNode.getAreaDesc().getAreaName() + "\nPopulation: " + tempNode.getAreaDesc().getPopulation() + "\nArea's current bike racks: " + tempNode.getAreaDesc().getCurrentBikeRacks();
+            sPrintList += "\nArea Name: " + tempNode.getAreaDesc().getAreaName() + "\nPopulation: " + tempNode.getAreaDesc().getPopulation() + "\nArea's current bike racks: " + tempNode.getAreaDesc().getCurrentBikeRacks()
+                     + "\n ****************";
             tempNode = tempNode.getNext();
         }
         return sPrintList;

@@ -5,21 +5,31 @@
 package smartbikeparkingapp;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author marti
  */
 public class MainGUI extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainGUI.class.getName());
+    private AreasToBeEvaluatedSLL mySLList;
+    private SmartBikeParkPQ myPQ;
+    private CurrentBuildsStack myStack;
 
     /**
      * Creates new form MainGUI
+     *
+     *
      */
     public MainGUI() {
         initComponents();
-        this.getContentPane().setBackground(Color.decode("#0E4D57"));        
+        //set color to the jFrame and declare the ADTS for use
+        this.getContentPane().setBackground(Color.decode("#0E4D57"));
+        myStack = new CurrentBuildsStack();
+        myPQ = new SmartBikeParkPQ();
+        mySLList = new AreasToBeEvaluatedSLL();
     }
 
     /**
@@ -31,33 +41,392 @@ public class MainGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        isShelteredBG = new javax.swing.ButtonGroup();
         titleLbl = new javax.swing.JLabel();
+        sllPanel = new javax.swing.JPanel();
+        areaNameLbl = new javax.swing.JLabel();
+        populationLbl = new javax.swing.JLabel();
+        currentBikeRackLbl = new javax.swing.JLabel();
+        indexLbl = new javax.swing.JLabel();
+        addBtn = new javax.swing.JButton();
+        getBtn = new javax.swing.JButton();
+        removeBtn = new javax.swing.JButton();
+        printListBtn = new javax.swing.JButton();
+        areaNameTf = new javax.swing.JTextField();
+        populationTf = new javax.swing.JTextField();
+        currentBikeRacksTf = new javax.swing.JTextField();
+        indexTf = new javax.swing.JTextField();
+        inputPanel1 = new javax.swing.JPanel();
+        locationLbl = new javax.swing.JLabel();
+        bikeCapacityLbl = new javax.swing.JLabel();
+        shelterLbl = new javax.swing.JLabel();
+        locationTf = new javax.swing.JTextField();
+        bikeCapacityTf = new javax.swing.JTextField();
+        trueBtn = new javax.swing.JRadioButton();
+        falseBtn = new javax.swing.JRadioButton();
+        queueBtn = new javax.swing.JButton();
+        dequeueBtn = new javax.swing.JButton();
+        pqSizeBtn = new javax.swing.JButton();
+        printPQbtn = new javax.swing.JButton();
+        pushBtn = new javax.swing.JButton();
+        popBtn = new javax.swing.JButton();
+        stackSizeBtn = new javax.swing.JButton();
+        printStackBtn = new javax.swing.JButton();
+        priorityLbl = new javax.swing.JLabel();
+        priorityTf = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        pqTA = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        sllTA = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         titleLbl.setFont(new java.awt.Font("Gill Sans Nova Ultra Bold", 0, 24)); // NOI18N
         titleLbl.setForeground(new java.awt.Color(255, 255, 255));
-        titleLbl.setText("Smart Bike Parking App");
+        titleLbl.setText("Main Page");
+
+        sllPanel.setBackground(new java.awt.Color(0, 153, 51));
+        sllPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        areaNameLbl.setText("Area Name:");
+
+        populationLbl.setText("Population:");
+
+        currentBikeRackLbl.setText("Current bike racks:");
+
+        indexLbl.setText("Index for ADD / GET / REMOVE:");
+
+        addBtn.setText("ADD");
+        addBtn.addActionListener(this::addBtnActionPerformed);
+
+        getBtn.setText("GET");
+        getBtn.addActionListener(this::getBtnActionPerformed);
+
+        removeBtn.setText("REMOVE");
+        removeBtn.addActionListener(this::removeBtnActionPerformed);
+
+        printListBtn.setText("PRINT LIST");
+        printListBtn.addActionListener(this::printListBtnActionPerformed);
+
+        javax.swing.GroupLayout sllPanelLayout = new javax.swing.GroupLayout(sllPanel);
+        sllPanel.setLayout(sllPanelLayout);
+        sllPanelLayout.setHorizontalGroup(
+            sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sllPanelLayout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addGroup(sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(sllPanelLayout.createSequentialGroup()
+                        .addComponent(indexLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(indexTf, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sllPanelLayout.createSequentialGroup()
+                        .addGap(0, 19, Short.MAX_VALUE)
+                        .addGroup(sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(addBtn)
+                            .addComponent(removeBtn))
+                        .addGap(82, 82, 82)
+                        .addGroup(sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(printListBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(getBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(77, 77, 77))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sllPanelLayout.createSequentialGroup()
+                        .addGroup(sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(areaNameLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                                .addComponent(populationLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(currentBikeRackLbl))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(sllPanelLayout.createSequentialGroup()
+                                .addComponent(currentBikeRacksTf, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
+                            .addGroup(sllPanelLayout.createSequentialGroup()
+                                .addGroup(sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(areaNameTf)
+                                    .addComponent(populationTf, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE))
+                                .addGap(77, 77, 77))))))
+        );
+        sllPanelLayout.setVerticalGroup(
+            sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sllPanelLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(areaNameLbl)
+                    .addComponent(areaNameTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(populationLbl)
+                    .addComponent(populationTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(currentBikeRackLbl)
+                    .addComponent(currentBikeRacksTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(indexLbl)
+                    .addComponent(indexTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addGroup(sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addBtn)
+                    .addComponent(getBtn))
+                .addGap(18, 18, 18)
+                .addGroup(sllPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(removeBtn)
+                    .addComponent(printListBtn))
+                .addContainerGap(104, Short.MAX_VALUE))
+        );
+
+        inputPanel1.setBackground(new java.awt.Color(0, 153, 51));
+        inputPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        locationLbl.setText("Location:");
+
+        bikeCapacityLbl.setText("Bike Capacity:");
+
+        shelterLbl.setText("Is Sheltered?");
+
+        isShelteredBG.add(trueBtn);
+        trueBtn.setText("Yes");
+        trueBtn.addActionListener(this::trueBtnActionPerformed);
+
+        isShelteredBG.add(falseBtn);
+        falseBtn.setText("No");
+
+        queueBtn.setText("QUEUE");
+
+        dequeueBtn.setText("DEQUEUE");
+
+        pqSizeBtn.setText("CHECK SIZE");
+
+        printPQbtn.setText("PRINT PQ");
+
+        pushBtn.setText("PUSH");
+        pushBtn.addActionListener(this::pushBtnActionPerformed);
+
+        popBtn.setText("POP");
+
+        stackSizeBtn.setText("CHECK SIZE");
+
+        printStackBtn.setText("PRINT STACK");
+
+        priorityLbl.setText("Priority:");
+
+        javax.swing.GroupLayout inputPanel1Layout = new javax.swing.GroupLayout(inputPanel1);
+        inputPanel1.setLayout(inputPanel1Layout);
+        inputPanel1Layout.setHorizontalGroup(
+            inputPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(inputPanel1Layout.createSequentialGroup()
+                .addGroup(inputPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(inputPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(inputPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(queueBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pqSizeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pushBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(stackSizeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(inputPanel1Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(inputPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(priorityLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(inputPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(locationLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(bikeCapacityLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(shelterLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)))
+                .addGroup(inputPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(inputPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(bikeCapacityTf)
+                        .addComponent(locationTf)
+                        .addComponent(trueBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(falseBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(inputPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(popBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(dequeueBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                            .addComponent(printPQbtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(priorityTf))
+                    .addComponent(printStackBtn))
+                .addContainerGap(66, Short.MAX_VALUE))
+        );
+        inputPanel1Layout.setVerticalGroup(
+            inputPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(inputPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(inputPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(locationLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(locationTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(inputPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bikeCapacityLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bikeCapacityTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(inputPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(shelterLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(trueBtn, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(falseBtn)
+                .addGap(5, 5, 5)
+                .addGroup(inputPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(priorityLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(priorityTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addGroup(inputPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(queueBtn)
+                    .addComponent(dequeueBtn))
+                .addGap(18, 18, 18)
+                .addGroup(inputPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pqSizeBtn)
+                    .addComponent(printPQbtn))
+                .addGap(28, 28, 28)
+                .addGroup(inputPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pushBtn)
+                    .addComponent(popBtn))
+                .addGap(18, 18, 18)
+                .addGroup(inputPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(stackSizeBtn)
+                    .addComponent(printStackBtn))
+                .addGap(18, 18, 18))
+        );
+
+        pqTA.setColumns(20);
+        pqTA.setRows(5);
+        jScrollPane1.setViewportView(pqTA);
+
+        sllTA.setColumns(20);
+        sllTA.setRows(5);
+        jScrollPane2.setViewportView(sllTA);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(299, 299, 299)
+                .addComponent(titleLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(120, Short.MAX_VALUE)
-                .addComponent(titleLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(105, 105, 105))
+                .addContainerGap(25, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jScrollPane1)
+                    .addComponent(inputPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(sllPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(45, 45, 45)
+                .addContainerGap()
                 .addComponent(titleLbl)
-                .addContainerGap(322, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(inputPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sllPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void trueBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trueBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_trueBtnActionPerformed
+
+    private void pushBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pushBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pushBtnActionPerformed
+
+    private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
+        // TODO add your handling code here:
+        //getting the inputs from the text fields and adding them to the stack
+        String areaName = areaNameTf.getText();
+        //try catch with number format exception to catch errors
+        try {
+            int population = Integer.parseInt(populationTf.getText());
+            int currentBikeRacks = Integer.parseInt(currentBikeRacksTf.getText());
+            int index = Integer.parseInt(indexTf.getText());
+
+            //create new object with inputs
+            AreaDesc newArea = new AreaDesc(areaName, population, currentBikeRacks);
+            //check if list input is empty, then add to end, if index smaller then size add to position, if index larger then size add at the end
+            if (mySLList.isEmpty()) {
+                mySLList.add(newArea);
+            } else if (index < mySLList.size()) {
+                mySLList.add(index, newArea);
+            } else {
+                mySLList.add(mySLList.size(), newArea);
+            }
+            //set fields blank to acknowledge input 
+            areaNameTf.setText("");
+            populationTf.setText("");
+            currentBikeRacksTf.setText("");
+            indexTf.setText("");
+        } catch (NumberFormatException numE) {
+            JOptionPane.showMessageDialog(null, "You have to enter an integer for the last 3 fields!");
+        }
+
+    }//GEN-LAST:event_addBtnActionPerformed
+
+    private void getBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getBtnActionPerformed
+        // TODO add your handling code here:
+        //TRY CATCH FOR NUMBER FORNAT
+        try {
+            int index = Integer.parseInt(indexTf.getText());
+            //error handling if index is larger than the size
+            if (index > mySLList.size()) {
+                JOptionPane.showMessageDialog(null, "The index you have entered doesn't exist on the list try again!");
+            } else {
+                AreaDesc getArea = mySLList.get(index);
+                String getString;
+                getString = "\nArea Name: " + getArea.getAreaName() + "\nPopulation: " + getArea.getPopulation() + "\nArea's current bike racks: " + getArea.getCurrentBikeRacks();
+                sllTA.append(getString);
+                //set fields blank to acknowledge input 
+                areaNameTf.setText("");
+                populationTf.setText("");
+                currentBikeRacksTf.setText("");
+                indexTf.setText("");
+            }
+        } catch (NumberFormatException numE) {
+            JOptionPane.showMessageDialog(null, "You have to enter an integer for the index field!");
+
+        }
+
+    }//GEN-LAST:event_getBtnActionPerformed
+
+    private void removeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeBtnActionPerformed
+        // TODO add your handling code here:
+        //TRY CATCH FOR NUMBER FORNAT
+        try {
+            int index = Integer.parseInt(indexTf.getText());
+            //error handling if index is larger than the size
+            if (index < 1 || index > mySLList.size()) {
+                JOptionPane.showMessageDialog(null, "The index you have entered doesn't exist on the list try again!");
+            } else {
+                mySLList.remove(index);
+                sllTA.append("\n**************** \nItem at index: " + index + " successfully removed!");
+                //set fields blank to acknowledge input 
+                areaNameTf.setText("");
+                populationTf.setText("");
+                currentBikeRacksTf.setText("");
+                indexTf.setText("");
+            }
+        } catch (NumberFormatException numE) {
+            JOptionPane.showMessageDialog(null, "You have to enter an integer for the index field!");
+
+        }
+    }//GEN-LAST:event_removeBtnActionPerformed
+
+    private void printListBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printListBtnActionPerformed
+        // TODO add your handling code here:
+        sllTA.append("\n***********\n" + mySLList.printList());
+    }//GEN-LAST:event_printListBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -85,6 +454,42 @@ public class MainGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addBtn;
+    private javax.swing.JLabel areaNameLbl;
+    private javax.swing.JTextField areaNameTf;
+    private javax.swing.JLabel bikeCapacityLbl;
+    private javax.swing.JTextField bikeCapacityTf;
+    private javax.swing.JLabel currentBikeRackLbl;
+    private javax.swing.JTextField currentBikeRacksTf;
+    private javax.swing.JButton dequeueBtn;
+    private javax.swing.JRadioButton falseBtn;
+    private javax.swing.JButton getBtn;
+    private javax.swing.JLabel indexLbl;
+    private javax.swing.JTextField indexTf;
+    private javax.swing.JPanel inputPanel1;
+    private javax.swing.ButtonGroup isShelteredBG;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel locationLbl;
+    private javax.swing.JTextField locationTf;
+    private javax.swing.JButton popBtn;
+    private javax.swing.JLabel populationLbl;
+    private javax.swing.JTextField populationTf;
+    private javax.swing.JButton pqSizeBtn;
+    private javax.swing.JTextArea pqTA;
+    private javax.swing.JButton printListBtn;
+    private javax.swing.JButton printPQbtn;
+    private javax.swing.JButton printStackBtn;
+    private javax.swing.JLabel priorityLbl;
+    private javax.swing.JTextField priorityTf;
+    private javax.swing.JButton pushBtn;
+    private javax.swing.JButton queueBtn;
+    private javax.swing.JButton removeBtn;
+    private javax.swing.JLabel shelterLbl;
+    private javax.swing.JPanel sllPanel;
+    private javax.swing.JTextArea sllTA;
+    private javax.swing.JButton stackSizeBtn;
     private javax.swing.JLabel titleLbl;
+    private javax.swing.JRadioButton trueBtn;
     // End of variables declaration//GEN-END:variables
 }
